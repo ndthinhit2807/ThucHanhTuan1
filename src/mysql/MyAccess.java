@@ -18,6 +18,7 @@ public class MyAccess {
             stmt = con.createStatement();
         }catch (Exception ex){
             JOptionPane.showMessageDialog(null,"loi dbacess");
+            System.out.println("");
         }
     }
     public int Update(String str){
