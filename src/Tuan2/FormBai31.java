@@ -22,6 +22,18 @@ public class FormBai31 extends javax.swing.JFrame {
     public FormBai31() {
         initComponents();
     }
+    
+
+       public class SoNguyenTo {
+    boolean kiemtranguyento(int n) {
+        for (int i = 2; i <= Math.sqrt(n); i++) {
+            if (n % i == 0) {
+                return false;
+            }
+        }
+        return true;
+    }
+}
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -37,16 +49,8 @@ public class FormBai31 extends javax.swing.JFrame {
         btnghivanban = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
         btnquaylai = new javax.swing.JButton();
-        jLabel2 = new javax.swing.JLabel();
         txtpath = new javax.swing.JTextField();
         btnchon = new javax.swing.JButton();
-        txtnhapchuoi = new javax.swing.JTextField();
-        jLabel3 = new javax.swing.JLabel();
-        txtnoidung = new javax.swing.JTextField();
-        btndocnhiphan = new javax.swing.JButton();
-        btnghinhiphan = new javax.swing.JButton();
-        jScrollPane1 = new javax.swing.JScrollPane();
-        listrandom = new javax.swing.JList<>();
         btnrandom = new javax.swing.JButton();
         jScrollPane2 = new javax.swing.JScrollPane();
         txt123 = new javax.swing.JTextArea();
@@ -76,39 +80,12 @@ public class FormBai31 extends javax.swing.JFrame {
             }
         });
 
-        jLabel2.setText("Nhập chuỗi");
-
         btnchon.setText("Chọn");
         btnchon.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnchonActionPerformed(evt);
             }
         });
-
-        jLabel3.setText("Nội dung file");
-
-        txtnoidung.setBackground(new java.awt.Color(51, 153, 255));
-
-        btndocnhiphan.setText("Đọc File nhị phân");
-        btndocnhiphan.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btndocnhiphanActionPerformed(evt);
-            }
-        });
-
-        btnghinhiphan.setText("Ghi File nhị phân");
-        btnghinhiphan.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnghinhiphanActionPerformed(evt);
-            }
-        });
-
-        listrandom.setModel(new javax.swing.AbstractListModel<String>() {
-            String[] strings = { "Item 1", "Item 2", "Item 3", "Item 4", "Item 5" };
-            public int getSize() { return strings.length; }
-            public String getElementAt(int i) { return strings[i]; }
-        });
-        jScrollPane1.setViewportView(listrandom);
 
         btnrandom.setText("Ngẫu Nhiên");
         btnrandom.addActionListener(new java.awt.event.ActionListener() {
@@ -126,47 +103,31 @@ public class FormBai31 extends javax.swing.JFrame {
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(13, 13, 13)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(12, 12, 12)
+                        .addGap(13, 13, 13)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel2)
-                            .addComponent(jLabel3))
-                        .addGap(20, 20, 20)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                             .addGroup(layout.createSequentialGroup()
-                                .addGap(148, 148, 148)
-                                .addComponent(txtnhapchuoi))
-                            .addComponent(txtnoidung, javax.swing.GroupLayout.PREFERRED_SIZE, 261, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(btnquaylai, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 84, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(132, 132, 132))
+                                .addComponent(jLabel1)
+                                .addGap(26, 26, 26))
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                                .addComponent(btnrandom, javax.swing.GroupLayout.PREFERRED_SIZE, 98, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(18, 18, 18)))
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jScrollPane2, javax.swing.GroupLayout.DEFAULT_SIZE, 246, Short.MAX_VALUE)
+                            .addComponent(txtpath))
+                        .addGap(18, 18, 18)
+                        .addComponent(btnchon, javax.swing.GroupLayout.PREFERRED_SIZE, 94, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(layout.createSequentialGroup()
+                        .addGap(106, 106, 106)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(layout.createSequentialGroup()
-                                .addGap(38, 38, 38)
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(btnghinhiphan, javax.swing.GroupLayout.PREFERRED_SIZE, 126, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(btndocnhiphan, javax.swing.GroupLayout.PREFERRED_SIZE, 126, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                .addGap(33, 33, 33)
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(btndocvanban, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                    .addComponent(btnghivanban, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
-                            .addGroup(layout.createSequentialGroup()
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addGroup(layout.createSequentialGroup()
-                                        .addComponent(jLabel1)
-                                        .addGap(26, 26, 26))
-                                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                                        .addComponent(btnrandom, javax.swing.GroupLayout.PREFERRED_SIZE, 98, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addGap(18, 18, 18)))
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(jScrollPane2)
-                                    .addComponent(txtpath)
-                                    .addComponent(jScrollPane1))
-                                .addGap(18, 18, 18)
-                                .addComponent(btnchon, javax.swing.GroupLayout.PREFERRED_SIZE, 94, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                        .addContainerGap())))
+                                .addGap(71, 71, 71)
+                                .addComponent(btnquaylai, javax.swing.GroupLayout.PREFERRED_SIZE, 84, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(122, 122, 122))
+                            .addComponent(btndocvanban, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(btnghivanban, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
+                .addContainerGap())
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -178,28 +139,15 @@ public class FormBai31 extends javax.swing.JFrame {
                     .addComponent(btnchon))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 35, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 61, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(btnrandom))
-                .addGap(18, 18, 18)
-                .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(32, 32, 32)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel2)
-                    .addComponent(txtnhapchuoi, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(35, 35, 35)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel3)
-                    .addComponent(txtnoidung, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(btndocnhiphan)
-                    .addComponent(btndocvanban))
+                    .addComponent(btnrandom)
+                    .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(71, 71, 71)
+                .addComponent(btndocvanban)
                 .addGap(28, 28, 28)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(btnghinhiphan)
-                    .addComponent(btnghivanban))
+                .addComponent(btnghivanban)
                 .addGap(28, 28, 28)
-                .addComponent(btnquaylai))
+                .addComponent(btnquaylai)
+                .addGap(133, 133, 133))
         );
 
         pack();
@@ -207,41 +155,61 @@ public class FormBai31 extends javax.swing.JFrame {
 
     private void btndocvanbanActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btndocvanbanActionPerformed
         // TODO add your handling code here:
-        try {
+try {
             FileReader fr = new FileReader(new File(txtpath.getText()));
             StringBuffer sb = new StringBuffer();
             char ca[] = new char[5];
-            while (fr.ready()){
+            while (fr.ready()) {
                 int leng = fr.read(ca);
-                sb.append(ca,0,leng);
+                sb.append(ca, 0, leng);
             }
             fr.close();
-            txt123.setText(sb+"");
-        }catch (Exception e){
+           
+            txt123.setText(sb + "");
+//            String[] ; 
+             
+            ArrayList<String> mauso = new ArrayList<String>();
+            String a = sb.toString();
+            for (int i = 0; i < 10 ; i++) {
+                String[] parts = a.split("\\n");
+                String mau = parts[i];
+                System.out.println(mau);
+                mauso.add(mau);
+            }
+
+            ArrayList<String> psnguyento = new ArrayList<String>();
+            SoNguyenTo snt = new SoNguyenTo();
+            String maus = null;
+            for (int i = 0; i < mauso.size(); i++) {
+                String[] b = mauso.get(i).split("/");
+                maus = b[1];
+                if ((Integer.parseInt(maus)) >1 &&snt.kiemtranguyento(Integer.parseInt(maus))) {
+                    psnguyento.add(mauso.get(i));
+                    
+                    txt123.setText(psnguyento.toString());
+                    System.out.println(maus);
+
+                } else {
+                    System.out.println("k có số nguyê tố");
+                }
+            }
+        } catch (Exception e) {
             e.printStackTrace();
         }
-        JOptionPane.showMessageDialog(null,"thanh cong");
+        JOptionPane.showMessageDialog(null, "thanh cong");
     }//GEN-LAST:event_btndocvanbanActionPerformed
 
     private void btnghivanbanActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnghivanbanActionPerformed
 //         TODO add your handling code here:
         try {
-    
-//            String[] myArray = new String[10];
-        ArrayList<String> phanso = new ArrayList<String>();
-    for (int i = 0; i < listrandom.getModel().getSize(); i++) {
-             phanso.add(String.valueOf(listrandom.getModel().getElementAt(i)));
-             System.out.println(phanso.toString());
-        }
-    System.out.println(phanso.toString());
-            
+
             FileWriter fw = new FileWriter(new File(txtpath.getText()));
             fw.write(txt123.getText());
             fw.close();
-        }catch (Exception e){
+        } catch (Exception e) {
             e.printStackTrace();
         }
-        JOptionPane.showMessageDialog(null,"thanh cong");
+        JOptionPane.showMessageDialog(null, "thanh cong");
     }//GEN-LAST:event_btnghivanbanActionPerformed
 
     private void btnquaylaiActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnquaylaiActionPerformed
@@ -259,64 +227,30 @@ public class FormBai31 extends javax.swing.JFrame {
         {
             try {
                 txtpath.setText(fcpath.getSelectedFile().getCanonicalPath());
-            }catch (IOException e){
-                JOptionPane.showMessageDialog(this,e);
+            } catch (IOException e) {
+                JOptionPane.showMessageDialog(this, e);
             }
         }
     }//GEN-LAST:event_btnchonActionPerformed
 
-    private void btndocnhiphanActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btndocnhiphanActionPerformed
-        // TODO add your handling code here:
-        byte a[] = new byte[20];
-        File file;
-        try {
-            file = new File(txtpath.getText());
-            FileInputStream fi = new FileInputStream(file);
-            fi.read(a);
-            fi.close();
-            txtnoidung.setText(new String(a));
-        }catch (IOException e){
-            e.printStackTrace();
-        }
-        JOptionPane.showMessageDialog(null,"thanh cong");
-    }//GEN-LAST:event_btndocnhiphanActionPerformed
-
-    private void btnghinhiphanActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnghinhiphanActionPerformed
-        // TODO add your handling code here:
-        byte a[] = new byte[20];
-        File file;
-       
-        
-        try {
-            file = new File(txtpath.getText());
-            try (//            FileOutputStream fos = new FileOutputStream(file);
-//            BufferedWriter fo = new BufferedWriter(new OutputStreamWriter(fos));
-////            fo.write(a);
-//            fo.write(a);
-//            fo.newLine();
-//            fo.close();
-                    FileWriter fw = new FileWriter(file)) {
-                fw.write(txt123.getText());
-            }
-        }catch (IOException e){
-            e.printStackTrace();
-        }
-        JOptionPane.showMessageDialog(null,"thanh cong");
-    }//GEN-LAST:event_btnghinhiphanActionPerformed
-
     private void btnrandomActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnrandomActionPerformed
         // TODO add your handling code here:
-         ArrayList<String> phanso = new ArrayList<String>();  
-        for (int i=0; i<10; i++) {
+        ArrayList<String> phanso = new ArrayList<String>();
+        for (int i = 0; i < 10; i++) {
             Random rand = new Random();
-            int tuso = rand.nextInt(100)+1;
-            int mauso = rand.nextInt(100)+1;
-            phanso.add(tuso +"/"+mauso+"\n");
+            int tuso = rand.nextInt(100) + 1;
+            int mauso = rand.nextInt(100) + 1;
+            phanso.add(tuso + "/" + mauso + "\n");
         }
         String customphanso = phanso.toString();
-        customphanso = customphanso.substring(1, customphanso.length()-1);
+        customphanso = customphanso.substring(1, customphanso.length() - 1);
         customphanso = customphanso.replaceAll(" ", "");
         txt123.setText(customphanso.replaceAll(",", ""));
+
+        String a = "123/456";
+        String[] parts = a.split("/");
+        String mau = parts[0];
+        System.out.println(mau);
     }//GEN-LAST:event_btnrandomActionPerformed
 
     /**
@@ -356,22 +290,14 @@ public class FormBai31 extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnchon;
-    private javax.swing.JButton btndocnhiphan;
     private javax.swing.JButton btndocvanban;
-    private javax.swing.JButton btnghinhiphan;
     private javax.swing.JButton btnghivanban;
     private javax.swing.JButton btnquaylai;
     private javax.swing.JButton btnrandom;
     private javax.swing.JFileChooser fcpath;
     private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel2;
-    private javax.swing.JLabel jLabel3;
-    private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
-    private javax.swing.JList<String> listrandom;
     private javax.swing.JTextArea txt123;
-    private javax.swing.JTextField txtnhapchuoi;
-    private javax.swing.JTextField txtnoidung;
     private javax.swing.JTextField txtpath;
     // End of variables declaration//GEN-END:variables
 }
